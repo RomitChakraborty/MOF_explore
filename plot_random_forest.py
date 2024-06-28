@@ -1,0 +1,65 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the results
+results_df = pd.read_csv('model_metrics_vs_n_estimators.csv')
+
+# Plot R² Score
+plt.figure(figsize=(10, 6))
+plt.plot(results_df['n_estimators'], results_df['r2_score'], marker='o')
+plt.title('R² Score vs. Number of Estimators in RandomForestRegressor')
+plt.xlabel('Number of Estimators')
+plt.ylabel('R² Score')
+plt.grid(True)
+plt.savefig('r2_score_vs_n_estimators.png')
+#plt.show()
+
+# Plot Mean Absolute Error (MAE)
+plt.figure(figsize=(10, 6))
+plt.plot(results_df['n_estimators'], results_df['mae_score'], marker='o', color='r')
+plt.title('Mean Absolute Error vs. Number of Estimators in RandomForestRegressor')
+plt.xlabel('Number of Estimators')
+plt.ylabel('Mean Absolute Error')
+plt.grid(True)
+plt.savefig('mae_vs_n_estimators.png')
+#plt.show()
+
+# Plot Mean Squared Error (MSE)
+plt.figure(figsize=(10, 6))
+plt.plot(results_df['n_estimators'], results_df['mse_score'], marker='o', color='g')
+plt.title('Mean Squared Error vs. Number of Estimators in RandomForestRegressor')
+plt.xlabel('Number of Estimators')
+plt.ylabel('Mean Squared Error')
+plt.grid(True)
+plt.savefig('mse_vs_n_estimators.png')
+#plt.show()
+
+# Plot Root Mean Squared Error (RMSE)
+plt.figure(figsize=(10, 6))
+plt.plot(results_df['n_estimators'], results_df['rmse_score'], marker='o', color='m')
+plt.title('Root Mean Squared Error vs. Number of Estimators in RandomForestRegressor')
+plt.xlabel('Number of Estimators')
+plt.ylabel('Root Mean Squared Error')
+plt.grid(True)
+plt.savefig('rmse_vs_n_estimators.png')
+#plt.show()
+
+# Plot Explained Variance Score
+plt.figure(figsize=(10, 6))
+plt.plot(results_df['n_estimators'], results_df['evs_score'], marker='o', color='y')
+plt.title('Explained Variance Score vs. Number of Estimators in RandomForestRegressor')
+plt.xlabel('Number of Estimators')
+plt.ylabel('Explained Variance Score')
+plt.grid(True)
+plt.savefig('evs_vs_n_estimators.png')
+#plt.show()
+
+# Plot Median Absolute Error (MedAE)
+plt.figure(figsize=(10, 6))
+plt.plot(results_df['n_estimators'], results_df['medae_score'], marker='o', color='c')
+plt.title('Median Absolute Error vs. Number of Estimators in RandomForestRegressor')
+plt.xlabel('Number of Estimators')
+plt.ylabel('Median Absolute Error')
+plt.grid(True)
+plt.savefig('medae_vs_n_estimators.png')
+#plt.show()
